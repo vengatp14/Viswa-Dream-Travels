@@ -13,606 +13,8 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <!-- Custom styles -->
-  <style>
-    /* Global theme colors: yellow, black, white */
-    :root {
-      --vd-yellow: #ffc107;
-      --vd-yellow-soft: rgba(255, 193, 7, 0.2);
-      --vd-black: #050505;
-      --vd-dark: #111111;
-      --vd-white: #ffffff;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--vd-black);
-      color: var(--vd-white);
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* Loading screen */
-    #vd-preloader {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at top, #222 0, #000 60%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      flex-direction: column;
-      color: var(--vd-white);
-    }
-
-    .vd-loader-orbit {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 3px solid var(--vd-yellow-soft);
-      border-top-color: var(--vd-yellow);
-      animation: vd-spin 1s linear infinite;
-      box-shadow: 0 0 25px rgba(255, 193, 7, 0.7);
-      margin-bottom: 1rem;
-    }
-
-    @keyframes vd-spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Navbar */
-    .vd-navbar {
-      background-color: rgba(0, 0, 0, 0.9);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
-    }
-
-    .vd-brand {
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--vd-yellow) !important;
-      text-transform: uppercase;
-    }
-
-    .vd-nav-link {
-      color: var(--vd-white) !important;
-      font-weight: 500;
-    }
-
-    .vd-nav-link:hover {
-      color: var(--vd-yellow) !important;
-    }
-
-    /* Hero section */
-    .vd-hero {
-      position: relative;
-      padding-top: 6rem;
-      padding-bottom: 5rem;
-      background: radial-gradient(circle at top left, #333 0, #000 45%, #050505 100%);
-      overflow: hidden;
-    }
-
-    .vd-hero-bg-orbit {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--vd-yellow-soft), transparent 60%);
-      top: -100px;
-      right: -150px;
-      filter: blur(2px);
-      animation: vd-orbit-pulse 6s ease-in-out infinite;
-    }
-
-    @keyframes vd-orbit-pulse {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.15); opacity: 1; }
-    }
-
-    .vd-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.25rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.7);
-      border: 1px solid var(--vd-yellow-soft);
-      box-shadow: 0 0 15px rgba(255, 193, 7, 0.35);
-      font-size: 0.85rem;
-    }
-
-    .vd-hero-title {
-      font-size: clamp(2.2rem, 3vw + 1rem, 3.2rem);
-      font-weight: 800;
-    }
-
-    .vd-highlight {
-      color: var(--vd-yellow);
-    }
-
-    .vd-hero-subtitle {
-      color: #e1e1e1;
-    }
-
-    .vd-hero-list li {
-      margin-bottom: 0.25rem;
-    }
-
-    .vd-hero-list i {
-      color: var(--vd-yellow);
-      margin-right: 0.4rem;
-    }
-
-    .vd-btn-primary-glow {
-      background: linear-gradient(135deg, #ffdd57, var(--vd-yellow));
-      color: #111;
-      border: none;
-      padding: 0.75rem 1.8rem;
-      font-weight: 600;
-      border-radius: 999px;
-      box-shadow: 0 0 18px rgba(255, 193, 7, 0.8);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .vd-btn-primary-glow::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      opacity: 0.0;
-      animation: vd-btn-pulse 2s ease-out infinite;
-    }
-
-    @keyframes vd-btn-pulse {
-      0% { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.3); opacity: 0; }
-    }
-
-    .vd-btn-outline {
-      border-radius: 999px;
-      color: var(--vd-white);
-      border: 1px solid var(--vd-yellow-soft);
-    }
-
-    .vd-btn-outline:hover {
-      background-color: var(--vd-yellow-soft);
-      color: var(--vd-white);
-    }
-
-    /* Hero slider */
-    .vd-hero-slider .carousel-item {
-      height: 350px;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .vd-hero-slider .carousel-item::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), transparent 60%);
-    }
-
-    .vd-hero-slider img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      transform: scale(1.05);
-    }
-
-    .vd-hero-slider .carousel-indicators [data-bs-target] {
-      background-color: var(--vd-yellow);
-    }
-
-    /* Section general styles */
-    section {
-      padding: 4rem 0;
-    }
-
-    .vd-section-title {
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-    }
-
-    .vd-section-title::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 60%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--vd-yellow), transparent);
-      box-shadow: 0 0 15px rgba(255, 193, 7, 0.9);
-    }
-
-    .vd-section-muted {
-      color: #cccccc;
-      max-width: 700px;
-      margin-inline: auto;
-    }
-
-    /* Mission / Vision / Motto cards */
-    .vd-card-ghost {
-      background: rgba(10, 10, 10, 0.9);
-      border-radius: 1.2rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .vd-card-ghost::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at top, var(--vd-yellow-soft), transparent 55%);
-      opacity: 0;
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .vd-card-ghost:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.75);
-      border-color: var(--vd-yellow-soft);
-    }
-
-    .vd-card-ghost:hover::before {
-      opacity: 1;
-      transform: translateY(-10px);
-    }
-
-    /* Why us */
-    .vd-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.15rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid var(--vd-yellow-soft);
-      font-size: 0.8rem;
-      color: #f1f1f1;
-    }
-
-    /* Services slider */
-    .vd-services-track {
-      display: flex;
-      gap: 1rem;
-      animation: vd-marquee 35s linear infinite;
-    }
-
-    .vd-service-pill {
-      min-width: 300px;
-      margin:0px 10px;
-      background: rgba(20, 20, 20, 0.95);
-      border-radius: 999px;
-      padding: 0.8rem 1.2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-    }
-
-    .vd-service-pill i {
-      color: var(--vd-yellow);
-    }
-
-    @keyframes vd-marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* CTA wave background */
-    .vd-cta {
-      position: relative;
-      overflow: hidden;
-      background: radial-gradient(circle at left, var(--vd-yellow-soft), #000 45%);
-    }
-
-    .vd-cta-wave {
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 110px;
-      background: radial-gradient(circle at top, var(--vd-yellow-soft), transparent 60%);
-      opacity: 0.5;
-      animation: vd-wave 7s ease-in-out infinite alternate;
-    }
-
-    @keyframes vd-wave {
-      0% { transform: translateX(-20px) translateY(0); }
-      100% { transform: translateX(20px) translateY(10px); }
-    }
-
-    /* FAQ */
-    .accordion-button {
-      background-color: #111111;
-      color: var(--vd-white);
-    }
-
-    .accordion-button:not(.collapsed) {
-      color: var(--vd-yellow);
-      background-color: #181818;
-      box-shadow: 0 0 18px rgba(255, 193, 7, 0.5);
-    }
-
-    .accordion-body {
-      background-color: #0d0d0d;
-      color: #f1f1f1;
-    }
-
-    /* Testimonials */
-    .vd-testimonial-card {
-      background: rgba(15, 15, 15, 0.9);
-      border-radius: 1.2rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
-    }
-
-    .vd-testimonial-img {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--vd-yellow-soft);
-    }
-
-    /* Gallery */
-    .vd-gallery-img {
-      border-radius: 1rem;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .vd-gallery-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.03);
-      transition: transform 0.35s ease;
-    }
-
-    .vd-gallery-img::after {
-      content: "Explore destination";
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
-      color: var(--vd-white);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .vd-gallery-img:hover img {
-      transform: scale(1.08);
-    }
-
-    .vd-gallery-img:hover::after {
-      opacity: 1;
-    }
-
-    /* Sticky floating buttons */
-    .vd-floating-buttons {
-      position: fixed;
-      right: 16px;
-      bottom: 80px; /* lifted a bit for bottom nav */
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-    }
-
-    .vd-floating-btn {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .vd-floating-btn-whatsapp {
-      background: #25d366;
-      color: #fff;
-    }
-
-    .vd-floating-btn-call {
-      background: var(--vd-yellow);
-      color: #111;
-    }
-
-    .vd-floating-btn-enquiry {
-      background: #111;
-      color: var(--vd-white);
-      border: 1px solid var(--vd-yellow);
-    }
-
-    .vd-floating-btn::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      opacity: 0.0;
-      animation: vd-btn-pulse 2.3s ease-out infinite;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #050505;
-      color: #cccccc;
-      padding-top: 3rem;
-      padding-bottom: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    footer a {
-      color: #e1e1e1;
-      font-size: 0.93rem;
-    }
-
-    footer a:hover {
-      color: var(--vd-yellow);
-    }
-
-    .vd-footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      margin-top: 1.5rem;
-      padding-top: 1rem;
-      font-size: 0.8rem;
-      color: #888888;
-    }
-
-    /* Helpers */
-    .vd-badge-soft {
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 0.25rem 0.7rem;
-      font-size: 0.75rem;
-      color: #f1f1f1;
-    }
-
-    @media (max-width: 991.98px) {
-      .vd-services-track {
-        animation-duration: 45s;
-      }
-    }
-
-    /* NEW: mobile bottom nav */
-    .vd-bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 998;
-      background: rgba(0, 0, 0, 0.96);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      display: none;
-    }
-
-    .vd-bottom-nav .nav-link {
-      font-size: 0.7rem;
-      color: #e1e1e1;
-    }
-
-    .vd-bottom-nav .nav-link.active,
-    .vd-bottom-nav .nav-link:focus {
-      color: var(--vd-yellow);
-    }
-
-    .vd-bottom-nav i {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.1rem;
-    }
-
-    @media (max-width: 767.98px) {
-      .vd-bottom-nav {
-        display: block;
-      }
-      body {
-        padding-bottom: 64px;
-      }
-      .vd-floating-buttons {
-        bottom: 140px;
-      }
-    }
-
-    /* NEW: simple fade-in-up scroll animation */
-    .vd-animate {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .vd-animate.vd-animate-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* NEW: packages / tours section */
-    .vd-package-card {
-      background: #101010;
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-      height: 100%;
-    }
-
-    .vd-package-image {
-      height: 180px;
-      overflow: hidden;
-    }
-
-    .vd-package-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
-    }
-
-    .vd-package-card:hover .vd-package-image img {
-      transform: scale(1.08);
-    }
-
-    .vd-package-meta small {
-      display: inline-block;
-      margin-right: 0.8rem;
-      color: #bbb;
-    }
-
-    .vd-package-price {
-      color: var(--vd-yellow);
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .vd-filter-pill {
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      padding: 0.25rem 0.9rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      background: transparent;
-      color: #e1e1e1;
-    }
-
-    .vd-filter-pill.active {
-      background: var(--vd-yellow-soft);
-      color: var(--vd-yellow);
-      border-color: var(--vd-yellow);
-    }
-
-    /* NEW: contact / about cards */
-    .vd-contact-card {
-      background: #0b0b0b;
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      height: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
   <!-- Loading animation -->
@@ -624,24 +26,24 @@
     </div>
   </div>
 
-  <!-- Sticky floating action buttons: WhatsApp, Call, Enquiry -->
+  <!-- Sticky floating action buttons -->
   <div class="vd-floating-buttons">
-    <a href="https://wa.me/919944368726?text=Hi%20Viswa%20Dream%20Travels%2C%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" class="vd-floating-btn vd-floating-btn-whatsapp" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919944368726?text=Hi%20Viswa%20Dream%20Travels%2C%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" class="vd-floating-btn vd-floating-btn-whatsapp">
       <i class="bi bi-whatsapp fs-3"></i>
     </a>
-    <a href="tel:+919944368726" class="vd-floating-btn vd-floating-btn-call" aria-label="Call Viswa Dream Travels">
+    <a href="tel:+919944368726" class="vd-floating-btn vd-floating-btn-call">
       <i class="bi bi-telephone-fill fs-5"></i>
     </a>
-    <button type="button" class="vd-floating-btn vd-floating-btn-enquiry" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal" aria-label="Open enquiry form">
+    <button type="button" class="vd-floating-btn vd-floating-btn-enquiry" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
       <i class="bi bi-chat-right-text fs-5"></i>
     </button>
   </div>
 
-  <!-- Navbar -->
+  <!-- Navbar WITH THEME TOGGLE -->
   <nav class="navbar navbar-expand-lg navbar-dark vd-navbar fixed-top">
     <div class="container">
       <a class="navbar-brand vd-brand" href="#hero">Viswa Dream Travels</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
@@ -652,12 +54,10 @@
           <li class="nav-item"><a class="nav-link vd-nav-link" href="#packages">Packages</a></li>
           <li class="nav-item"><a class="nav-link vd-nav-link" href="#about-company">About</a></li>
           <li class="nav-item"><a class="nav-link vd-nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link vd-nav-link" href="#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link vd-nav-link" href="#gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link vd-nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-sm vd-btn-primary-glow" href="tel:+919944368726">+91 99443 68726</a>
+            <a class="btn btn-sm vd-btn-primary-glow me-2 me-lg-3" href="tel:+919944368726">+91 99443 68726</a>
           </li>
+        
         </ul>
       </div>
     </div>
@@ -1322,16 +722,37 @@
           </div>
         </div>
         <div class="col-lg-6 vd-animate">
-          <div class="vd-contact-card h-100">
-            <h6 class="text-white mb-3">Office & contact details</h6>
-            <ul class="list-unstyled small mb-3">
-              <li class="mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i><a href="tel:+919944368726" class="text-white">+91 99443 68726</a></li>
-              <li class="mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i><a href="mailto:info@viswadreamtravels.com" class="text-white">info@viswadreamtravels.com</a></li>
-              <li class="mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i>Chennai, Tamil Nadu, India</li>
-            </ul>
-            <p class="small mb-1"><i class="bi bi-clock-history text-warning me-1"></i>Working hours: 10:00 AM – 7:00 PM IST (Monday to Saturday)</p>
-            <p class="small mb-0"><i class="bi bi-whatsapp text-warning me-1"></i>Send your destination and dates on WhatsApp to receive quick package ideas.</p>
-          </div>
+     <div class="vd-contact-card-modern h-100 p-4">
+    <h6 class="vd-title mb-3">Office & Contact Details</h6>
+
+    <ul class="list-unstyled vd-list mb-3">
+        <li class="mb-2 d-flex align-items-center">
+            <i class="bi bi-telephone-fill vd-icon me-2"></i>
+            <a href="tel:+919944368726" class="vd-link">+91 99443 68726</a>
+        </li>
+
+        <li class="mb-2 d-flex align-items-center">
+            <i class="bi bi-envelope-fill vd-icon me-2"></i>
+            <a href="mailto:info@viswadreamtravels.com" class="vd-link">info@viswadreamtravels.com</a>
+        </li>
+
+        <li class="mb-2 d-flex align-items-start">
+            <i class="bi bi-geo-alt-fill vd-icon me-2"></i>
+            <span class="vd-text">Chennai, Tamil Nadu, India</span>
+        </li>
+    </ul>
+
+    <p class="vd-small mb-1">
+        <i class="bi bi-clock-history vd-icon me-1"></i>
+        Working hours: 10:00 AM – 7:00 PM IST (Mon–Sat)
+    </p>
+
+    <p class="vd-small mb-0">
+        <i class="bi bi-whatsapp vd-icon me-1"></i>
+        Send your destination & dates on WhatsApp to receive quick package ideas.
+    </p>
+</div>
+
         </div>
       </div>
     </div>
@@ -1478,98 +899,7 @@
 
   <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
 
-  <!-- Behaviour scripts -->
-  <script>
-    // Remove preloader after page load
-    window.addEventListener("load", function () {
-      const preloader = document.getElementById("vd-preloader");
-      if (preloader) {
-        preloader.style.opacity = "0";
-        setTimeout(() => preloader.remove(), 400);
-      }
-    });
-
-    // Current year
-    document.getElementById("vdYear").textContent = new Date().getFullYear();
-
-    // Enquiry form submit
-    const enquiryForm = document.getElementById("vdEnquiryForm");
-    const enquiryWhatsAppLink = document.getElementById("vdEnquiryWhatsAppLink");
-
-    enquiryForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Thank you! Your enquiry details are captured. Connect backend/email service to process this form.");
-    });
-
-    // WhatsApp link from modal form
-    enquiryForm.addEventListener("input", function () {
-      const name = document.getElementById("vdName").value.trim();
-      const phone = document.getElementById("vdPhone").value.trim();
-      const email = document.getElementById("vdEmail").value.trim();
-      const location = document.getElementById("vdLocation").value.trim();
-      const tripType = document.getElementById("vdTripType").value;
-      const message = document.getElementById("vdMessage").value.trim();
-
-      const text = encodeURIComponent(
-        "New travel enquiry from website:%0A%0A" +
-        "Name: " + name + "%0A" +
-        "Mobile/WhatsApp: " + phone + "%0A" +
-        "Email: " + email + "%0A" +
-        "City: " + location + "%0A" +
-        "Trip type: " + tripType + "%0A" +
-        "Message: " + message
-      );
-
-      enquiryWhatsAppLink.href = "https://wa.me/919944368726?text=" + text;
-    });
-
-    // Fade-in scroll animations
-    const animatedEls = document.querySelectorAll('.vd-animate');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('vd-animate-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    animatedEls.forEach(el => io.observe(el));
-
-    // Package filter
-    const filterButtons = document.querySelectorAll('.vd-filter-pill');
-    const packageItems = document.querySelectorAll('.vd-package-item');
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.getAttribute('data-filter');
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        packageItems.forEach(card => {
-          const categories = card.getAttribute('data-category').split(' ');
-          if (filter === 'all' || categories.includes(filter)) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // Highlight active bottom nav on scroll
-    const sections = ['hero', 'services', 'packages', 'about-company', 'contact'];
-    const bottomLinks = document.querySelectorAll('.vd-bottom-nav .nav-link');
-    window.addEventListener('scroll', () => {
-      let current = 'hero';
-      sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          current = id;
-        }
-      });
-      bottomLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-      });
-    });
-  </script>
 </body>
 </html>
