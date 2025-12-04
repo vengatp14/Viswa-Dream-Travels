@@ -3,8 +3,8 @@
     :root {
       --vd-yellow: #ffc107;
       --vd-yellow-soft: rgba(255, 193, 7, 0.2);
-      --vd-black: #050505;
-      --vd-dark: #ffffff;
+      --vd-black: #000000ff;
+      --vd-dark: #000000ff;
       --vd-white: #ffffff;
       --vd-gray-light: #f8f9fa;
       --vd-gray-dark: #212529;
