@@ -1,0 +1,1575 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags for international standard and SEO -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Viswa Dream Travels | International Tours, Honeymoon Packages & Flight Tickets from Chennai</title>
+  <meta name="description" content="Viswa Dream Travels, Chennai offers international tour packages, honeymoon destinations, flight ticket booking, taxis, hotel rooms, group and corporate trips with full local guidance.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom styles -->
+  <style>
+    /* Global theme colors: yellow, black, white */
+    :root {
+      --vd-yellow: #ffc107;
+      --vd-yellow-soft: rgba(255, 193, 7, 0.2);
+      --vd-black: #050505;
+      --vd-dark: #111111;
+      --vd-white: #ffffff;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--vd-black);
+      color: var(--vd-white);
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Loading screen */
+    #vd-preloader {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, #222 0, #000 60%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      color: var(--vd-white);
+    }
+
+    .vd-loader-orbit {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--vd-yellow-soft);
+      border-top-color: var(--vd-yellow);
+      animation: vd-spin 1s linear infinite;
+      box-shadow: 0 0 25px rgba(255, 193, 7, 0.7);
+      margin-bottom: 1rem;
+    }
+
+    @keyframes vd-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Navbar */
+    .vd-navbar {
+      background-color: rgba(0, 0, 0, 0.9);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .vd-brand {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--vd-yellow) !important;
+      text-transform: uppercase;
+    }
+
+    .vd-nav-link {
+      color: var(--vd-white) !important;
+      font-weight: 500;
+    }
+
+    .vd-nav-link:hover {
+      color: var(--vd-yellow) !important;
+    }
+
+    /* Hero section */
+    .vd-hero {
+      position: relative;
+      padding-top: 6rem;
+      padding-bottom: 5rem;
+      background: radial-gradient(circle at top left, #333 0, #000 45%, #050505 100%);
+      overflow: hidden;
+    }
+
+    .vd-hero-bg-orbit {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--vd-yellow-soft), transparent 60%);
+      top: -100px;
+      right: -150px;
+      filter: blur(2px);
+      animation: vd-orbit-pulse 6s ease-in-out infinite;
+    }
+
+    @keyframes vd-orbit-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+
+    .vd-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--vd-yellow-soft);
+      box-shadow: 0 0 15px rgba(255, 193, 7, 0.35);
+      font-size: 0.85rem;
+    }
+
+    .vd-hero-title {
+      font-size: clamp(2.2rem, 3vw + 1rem, 3.2rem);
+      font-weight: 800;
+    }
+
+    .vd-highlight {
+      color: var(--vd-yellow);
+    }
+
+    .vd-hero-subtitle {
+      color: #e1e1e1;
+    }
+
+    .vd-hero-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .vd-hero-list i {
+      color: var(--vd-yellow);
+      margin-right: 0.4rem;
+    }
+
+    .vd-btn-primary-glow {
+      background: linear-gradient(135deg, #ffdd57, var(--vd-yellow));
+      color: #111;
+      border: none;
+      padding: 0.75rem 1.8rem;
+      font-weight: 600;
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(255, 193, 7, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vd-btn-primary-glow::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      opacity: 0.0;
+      animation: vd-btn-pulse 2s ease-out infinite;
+    }
+
+    @keyframes vd-btn-pulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    .vd-btn-outline {
+      border-radius: 999px;
+      color: var(--vd-white);
+      border: 1px solid var(--vd-yellow-soft);
+    }
+
+    .vd-btn-outline:hover {
+      background-color: var(--vd-yellow-soft);
+      color: var(--vd-white);
+    }
+
+    /* Hero slider */
+    .vd-hero-slider .carousel-item {
+      height: 350px;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .vd-hero-slider .carousel-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), transparent 60%);
+    }
+
+    .vd-hero-slider img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.05);
+    }
+
+    .vd-hero-slider .carousel-indicators [data-bs-target] {
+      background-color: var(--vd-yellow);
+    }
+
+    /* Section general styles */
+    section {
+      padding: 4rem 0;
+    }
+
+    .vd-section-title {
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .vd-section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--vd-yellow), transparent);
+      box-shadow: 0 0 15px rgba(255, 193, 7, 0.9);
+    }
+
+    .vd-section-muted {
+      color: #cccccc;
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
+    /* Mission / Vision / Motto cards */
+    .vd-card-ghost {
+      background: rgba(10, 10, 10, 0.9);
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .vd-card-ghost::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, var(--vd-yellow-soft), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .vd-card-ghost:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.75);
+      border-color: var(--vd-yellow-soft);
+    }
+
+    .vd-card-ghost:hover::before {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+
+    /* Why us */
+    .vd-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.15rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--vd-yellow-soft);
+      font-size: 0.8rem;
+      color: #f1f1f1;
+    }
+
+    /* Services slider */
+    .vd-services-track {
+      display: flex;
+      gap: 1rem;
+      animation: vd-marquee 35s linear infinite;
+    }
+
+    .vd-service-pill {
+      min-width: 300px;
+      margin:0px 10px;
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 999px;
+      padding: 0.8rem 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    }
+
+    .vd-service-pill i {
+      color: var(--vd-yellow);
+    }
+
+    @keyframes vd-marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* CTA wave background */
+    .vd-cta {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at left, var(--vd-yellow-soft), #000 45%);
+    }
+
+    .vd-cta-wave {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 110px;
+      background: radial-gradient(circle at top, var(--vd-yellow-soft), transparent 60%);
+      opacity: 0.5;
+      animation: vd-wave 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes vd-wave {
+      0% { transform: translateX(-20px) translateY(0); }
+      100% { transform: translateX(20px) translateY(10px); }
+    }
+
+    /* FAQ */
+    .accordion-button {
+      background-color: #111111;
+      color: var(--vd-white);
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: var(--vd-yellow);
+      background-color: #181818;
+      box-shadow: 0 0 18px rgba(255, 193, 7, 0.5);
+    }
+
+    .accordion-body {
+      background-color: #0d0d0d;
+      color: #f1f1f1;
+    }
+
+    /* Testimonials */
+    .vd-testimonial-card {
+      background: rgba(15, 15, 15, 0.9);
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+    }
+
+    .vd-testimonial-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--vd-yellow-soft);
+    }
+
+    /* Gallery */
+    .vd-gallery-img {
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .vd-gallery-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.03);
+      transition: transform 0.35s ease;
+    }
+
+    .vd-gallery-img::after {
+      content: "Explore destination";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+      color: var(--vd-white);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .vd-gallery-img:hover img {
+      transform: scale(1.08);
+    }
+
+    .vd-gallery-img:hover::after {
+      opacity: 1;
+    }
+
+    /* Sticky floating buttons */
+    .vd-floating-buttons {
+      position: fixed;
+      right: 16px;
+      bottom: 80px; /* lifted a bit for bottom nav */
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .vd-floating-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vd-floating-btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+
+    .vd-floating-btn-call {
+      background: var(--vd-yellow);
+      color: #111;
+    }
+
+    .vd-floating-btn-enquiry {
+      background: #111;
+      color: var(--vd-white);
+      border: 1px solid var(--vd-yellow);
+    }
+
+    .vd-floating-btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      opacity: 0.0;
+      animation: vd-btn-pulse 2.3s ease-out infinite;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #050505;
+      color: #cccccc;
+      padding-top: 3rem;
+      padding-bottom: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    footer a {
+      color: #e1e1e1;
+      font-size: 0.93rem;
+    }
+
+    footer a:hover {
+      color: var(--vd-yellow);
+    }
+
+    .vd-footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: #888888;
+    }
+
+    /* Helpers */
+    .vd-badge-soft {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.75rem;
+      color: #f1f1f1;
+    }
+
+    @media (max-width: 991.98px) {
+      .vd-services-track {
+        animation-duration: 45s;
+      }
+    }
+
+    /* NEW: mobile bottom nav */
+    .vd-bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 998;
+      background: rgba(0, 0, 0, 0.96);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: none;
+    }
+
+    .vd-bottom-nav .nav-link {
+      font-size: 0.7rem;
+      color: #e1e1e1;
+    }
+
+    .vd-bottom-nav .nav-link.active,
+    .vd-bottom-nav .nav-link:focus {
+      color: var(--vd-yellow);
+    }
+
+    .vd-bottom-nav i {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .vd-bottom-nav {
+        display: block;
+      }
+      body {
+        padding-bottom: 64px;
+      }
+      .vd-floating-buttons {
+        bottom: 140px;
+      }
+    }
+
+    /* NEW: simple fade-in-up scroll animation */
+    .vd-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .vd-animate.vd-animate-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* NEW: packages / tours section */
+    .vd-package-card {
+      background: #101010;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+      height: 100%;
+    }
+
+    .vd-package-image {
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .vd-package-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .vd-package-card:hover .vd-package-image img {
+      transform: scale(1.08);
+    }
+
+    .vd-package-meta small {
+      display: inline-block;
+      margin-right: 0.8rem;
+      color: #bbb;
+    }
+
+    .vd-package-price {
+      color: var(--vd-yellow);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .vd-filter-pill {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 0.25rem 0.9rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: transparent;
+      color: #e1e1e1;
+    }
+
+    .vd-filter-pill.active {
+      background: var(--vd-yellow-soft);
+      color: var(--vd-yellow);
+      border-color: var(--vd-yellow);
+    }
+
+    /* NEW: contact / about cards */
+    .vd-contact-card {
+      background: #0b0b0b;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading animation -->
+  <div id="vd-preloader" aria-hidden="true">
+    <div class="vd-loader-orbit"></div>
+    <div class="text-center">
+      <div class="fw-semibold mb-1">Viswa Dream Travels</div>
+      <small class="text-secondary">Crafting your next international journey…</small>
+    </div>
+  </div>
+
+  <!-- Sticky floating action buttons: WhatsApp, Call, Enquiry -->
+  <div class="vd-floating-buttons">
+    <a href="https://wa.me/919944368726?text=Hi%20Viswa%20Dream%20Travels%2C%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" class="vd-floating-btn vd-floating-btn-whatsapp" aria-label="Chat on WhatsApp">
+      <i class="bi bi-whatsapp fs-3"></i>
+    </a>
+    <a href="tel:+919944368726" class="vd-floating-btn vd-floating-btn-call" aria-label="Call Viswa Dream Travels">
+      <i class="bi bi-telephone-fill fs-5"></i>
+    </a>
+    <button type="button" class="vd-floating-btn vd-floating-btn-enquiry" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal" aria-label="Open enquiry form">
+      <i class="bi bi-chat-right-text fs-5"></i>
+    </button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark vd-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand vd-brand" href="#hero">Viswa Dream Travels</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#mission">Mission</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#packages">Packages</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#about-company">About</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link vd-nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-sm vd-btn-primary-glow" href="tel:+919944368726">+91 99443 68726</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="hero" class="vd-hero">
+    <div class="vd-hero-bg-orbit"></div>
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <div class="vd-hero-badge mb-3">
+            <span class="badge bg-warning text-dark me-1 border-0">New</span>
+            <span>International trips & honeymoon packages from Chennai</span>
+          </div>
+          <h1 class="vd-hero-title mb-3">
+            Viswa Dream Travels – <span class="vd-highlight">Your Global Travel Partner from Chennai</span>
+          </h1>
+          <p class="vd-hero-subtitle mb-3">
+            International trips, honeymoon packages, flight tickets, taxis, local guides, hotel rooms, group tours and corporate travel – all in one place.
+          </p>
+          <ul class="list-unstyled vd-hero-list mb-4">
+            <li><i class="bi bi-check-circle-fill"></i>24/7 support</li>
+            <li><i class="bi bi-check-circle-fill"></i>Expert local guides</li>
+            <li><i class="bi bi-check-circle-fill"></i>Custom-made itineraries</li>
+          </ul>
+          <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3">
+            <button type="button" class="vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+              Plan Your Trip Now
+            </button>
+            <a href="https://wa.me/919944368726" target="_blank" class="btn vd-btn-outline">
+              Call / WhatsApp +91 99443 68726
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div id="vdHeroCarousel" class="carousel slide vd-hero-slider" data-bs-ride="carousel" data-bs-interval="3500">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#vdHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+              <button type="button" data-bs-target="#vdHeroCarousel" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#vdHeroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="International city skyline">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Honeymoon beach destination">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/794254/pexels-photo-794254.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Group trip adventure">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mission / Vision / Motto -->
+  <section id="mission">
+    <div class="container">
+      <div class="text-center mb-4 vd-animate">
+        <h2 class="vd-section-title">Mission · Vision · Motto</h2>
+        <p class="vd-section-muted">
+          Viswa Dream Travels focuses on safe, seamless and memorable journeys, whether it is your first international trip or a recurring corporate tour.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="vd-card-ghost h-100 vd-animate">
+            <h5 class="mb-2 text-warning"><i class="bi bi-rocket-takeoff-fill me-1"></i> Mission</h5>
+            <p class="mb-0">
+              To design safe, seamless and memorable travel experiences across the world for every traveller from Chennai and beyond.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="vd-card-ghost h-100 vd-animate">
+            <h5 class="mb-2 text-warning"><i class="bi bi-eye-fill me-1"></i> Vision</h5>
+            <p class="mb-0">
+              To become the most trusted travel partner for international holidays, honeymoons and corporate journeys.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="vd-card-ghost h-100 vd-animate">
+            <h5 class="mb-2 text-warning"><i class="bi bi-lightning-charge-fill me-1"></i> Motto</h5>
+            <p class="mb-0">
+              Dream it. We plan it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section id="why-us">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 vd-animate">
+          <span class="vd-tag mb-2"><i class="bi bi-stars text-warning me-1"></i>Why choose Viswa Dream Travels</span>
+          <h2 class="vd-section-title mt-2">Why travellers trust us</h2>
+          <p class="vd-section-muted text-start mb-3">
+            From visa guidance to hotel check-in, the team manages details so that you focus on enjoying your destination.
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check2-circle text-warning me-2"></i>End-to-end support: tickets, visas, transfers, hotels and local guides.</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-warning me-2"></i>Customised itineraries for couples, families, groups and corporates.</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-warning me-2"></i>Transparent pricing with no hidden costs.</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-warning me-2"></i>Dedicated Chennai-based support team.</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 vd-animate">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/1439226/pexels-photo-1439226.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Travellers with guide at airport">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services slider -->
+  <section id="services">
+    <div class="container">
+      <div class="text-center mb-4 vd-animate">
+        <h2 class="vd-section-title">Our Travel Services</h2>
+        <p class="vd-section-muted">
+          All your travel requirements are handled in one place, from planning and booking to on-ground assistance.
+        </p>
+      </div>
+      <div class="overflow-hidden">
+        <div class="vd-services-track">
+          <div class="d-flex">
+            <div class="vd-service-pill">
+              <i class="bi bi-airplane-fill"></i>
+              <span>International Trips & Holiday Packages</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-heart-fill"></i>
+              <span>Honeymoon Destinations & Romantic Getaways</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-ticket-perforated-fill"></i>
+              <span>Flight Ticket Booking (Domestic & International)</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-taxi-front-fill"></i>
+              <span>Taxi & Airport Transfers</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-compass-fill"></i>
+              <span>Local Guides & Sightseeing</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-building-fill-check"></i>
+              <span>Hotel & Room Booking</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-people-fill"></i>
+              <span>Group Tours & Family Trips</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-briefcase-fill"></i>
+              <span>Corporate Travel & MICE</span>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="vd-service-pill">
+              <i class="bi bi-airplane-fill"></i>
+              <span>International Trips & Holiday Packages</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-heart-fill"></i>
+              <span>Honeymoon Destinations & Romantic Getaways</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-ticket-perforated-fill"></i>
+              <span>Flight Ticket Booking (Domestic & International)</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-taxi-front-fill"></i>
+              <span>Taxi & Airport Transfers</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-compass-fill"></i>
+              <span>Local Guides & Sightseeing</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-building-fill-check"></i>
+              <span>Hotel & Room Booking</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-people-fill"></i>
+              <span>Group Tours & Family Trips</span>
+            </div>
+            <div class="vd-service-pill">
+              <i class="bi bi-briefcase-fill"></i>
+              <span>Corporate Travel & MICE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="vd-cta">
+    <div class="vd-cta-wave"></div>
+    <div class="container position-relative py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8 vd-animate">
+          <h2 class="vd-section-title mb-3">Ready to plan your next trip?</h2>
+          <p class="mb-0">
+            Get personalised itineraries and best deals from Viswa Dream Travels, Chennai.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end vd-animate">
+          <div class="d-flex flex-lg-row flex-column justify-content-lg-end gap-2">
+            <button type="button" class="vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+              WhatsApp Now
+            </button>
+            <button type="button" class="btn vd-btn-outline" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+              Request a Call Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="text-center mb-4 vd-animate">
+        <h2 class="vd-section-title">Frequently Asked Questions</h2>
+        <p class="vd-section-muted">
+          Common queries about packages, bookings and services are answered here so that planning becomes easier.
+        </p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="vdFaqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqOne-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                  Do you arrange complete international tour packages from Chennai?
+                </button>
+              </h2>
+              <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#vdFaqAccordion">
+                <div class="accordion-body">
+                  Yes, Viswa Dream Travels can plan complete international trips including flights, accommodation, transfers, sightseeing and add-on experiences starting from Chennai.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqTwo-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                  Can you customise honeymoon packages for our budget?
+                </button>
+              </h2>
+              <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#vdFaqAccordion">
+                <div class="accordion-body">
+                  Honeymoon itineraries can be personalised for duration, budget, preferred countries, activities and hotel category.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqThree-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
+                  Do you provide visa assistance and travel insurance?
+                </button>
+              </h2>
+              <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#vdFaqAccordion">
+                <div class="accordion-body">
+                  The team assists with visa documentation guidance and can also coordinate travel insurance options as per destination rules.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqFour-heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
+                  How do I confirm my booking and make payments?
+                </button>
+              </h2>
+              <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#vdFaqAccordion">
+                <div class="accordion-body">
+                  Once an itinerary is finalised, clear payment terms and milestones are shared, and bookings are confirmed after receiving the agreed advance.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="text-center mb-4 vd-animate">
+        <h2 class="vd-section-title">What travellers say</h2>
+        <p class="vd-section-muted">
+          Feedback from couples, families and corporate teams who have travelled with Viswa Dream Travels.
+        </p>
+      </div>
+      <div id="vdTestimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="vd-testimonial-card h-100">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 1">
+                    <div>
+                      <h6 class="mb-0">Arun & Meera</h6>
+                      <small class="text-secondary">Chennai · Bali honeymoon</small>
+                    </div>
+                  </div>
+                  <p class="mb-0">
+                    The honeymoon trip was well planned with smooth transfers and beautiful resort options within our budget.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="vd-testimonial-card h-100">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 2">
+                    <div>
+                      <h6 class="mb-0">Priya S</h6>
+                      <small class="text-secondary">Chennai · Europe group tour</small>
+                    </div>
+                  </div>
+                  <p class="mb-0">
+                    The Europe group trip covered key cities with enough free time, and the local guides were very supportive.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="vd-testimonial-card h-100">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 3">
+                    <div>
+                      <h6 class="mb-0">Raghav Enterprises</h6>
+                      <small class="text-secondary">Chennai · Corporate offsite</small>
+                    </div>
+                  </div>
+                  <p class="mb-0">
+                    Our corporate offsite was handled professionally from flights to meeting spaces and team activities.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="vd-testimonial-card h-100">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 4">
+                    <div>
+                      <h6 class="mb-0">Lakshmi & Karthik</h6>
+                      <small class="text-secondary">Chennai · Maldives honeymoon</small>
+                    </div>
+                  </div>
+                  <p class="mb-0">
+                    Quick responses and clear explanations helped us finalise our Maldives honeymoon without stress.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="vd-testimonial-card h-100">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="https://images.pexels.com/photos/936229/pexels-photo-936229.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 5">
+                    <div>
+                      <h6 class="mb-0">Vijay Kumar</h6>
+                      <small class="text-secondary">Chennai · Singapore family trip</small>
+                    </div>
+                  </div>
+                  <p class="mb-0">
+                    Family-friendly hotels, convenient timing and Indian meal options made our Singapore holiday comfortable.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="vd-testimonial-card h-100">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 6">
+                    <div>
+                      <h6 class="mb-0">TechNova Pvt Ltd</h6>
+                      <small class="text-secondary">Chennai · Team incentive trip</small>
+                    </div>
+                  </div>
+                  <p class="mb-0">
+                    The incentive trip was executed smoothly with well-chosen experiences for our team members.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="text-center mb-4 vd-animate">
+        <h2 class="vd-section-title">Travel Gallery</h2>
+        <p class="vd-section-muted">
+          A glimpse of the kind of destinations and experiences Viswa Dream Travels can help you explore.
+        </p>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="City view at night">
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Beach resort">
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/1430677/pexels-photo-1430677.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mountain landscape">
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/225502/pexels-photo-225502.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Couple on beach">
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/1188473/pexels-photo-1188473.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="City street">
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/821651/pexels-photo-821651.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Friends on trip">
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Airplane view">
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="vd-gallery-img">
+            <img src="https://images.pexels.com/photos/1519088/pexels-photo-1519088.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Corporate team travel">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel packages / tours -->
+  <section id="packages">
+    <div class="container">
+      <div class="text-center mb-4 vd-animate">
+        <h2 class="vd-section-title">Travel Packages & Tours</h2>
+        <p class="vd-section-muted">
+          Featured international trips and honeymoon tours with clear pricing, duration and highlights for easy comparison.
+        </p>
+      </div>
+      <div class="row justify-content-between align-items-center mb-3 vd-animate">
+        <div class="col-md-8 mb-2">
+          <div class="d-flex flex-wrap gap-2">
+            <button class="vd-filter-pill active" data-filter="all">All</button>
+            <button class="vd-filter-pill" data-filter="honeymoon">Honeymoon</button>
+            <button class="vd-filter-pill" data-filter="family">Family / Group</button>
+            <button class="vd-filter-pill" data-filter="corporate">Corporate</button>
+            <button class="vd-filter-pill" data-filter="budget">Budget</button>
+          </div>
+        </div>
+        <div class="col-md-4 mb-2 text-md-end">
+          <small class="text-secondary">Filter by budget, location, date, category.</small>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 vd-package-item" data-category="honeymoon budget">
+          <div class="vd-package-card vd-animate">
+            <div class="vd-package-image">
+              <img src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Bali honeymoon package">
+            </div>
+            <div class="p-3">
+              <h5 class="mb-1">Romantic Bali Honeymoon</h5>
+              <div class="vd-package-meta mb-2">
+                <small><i class="bi bi-clock me-1 text-warning"></i>5 nights / 6 days</small>
+                <small><i class="bi bi-geo-alt me-1 text-warning"></i>Bali, Indonesia</small>
+              </div>
+              <p class="mb-2 small">
+                Candlelight dinner, private pool villa stay, island tours and airport transfers from Bali airport.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="vd-package-price">₹ 78,000*</div>
+                <button type="button" class="btn btn-sm vd-btn-outline" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                  View details
+                </button>
+              </div>
+              <small class="text-secondary d-block mt-1">*Indicative per couple, ex-Chennai. Final price may vary.</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 vd-package-item" data-category="family">
+          <div class="vd-package-card vd-animate">
+            <div class="vd-package-image">
+              <img src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Singapore family holiday">
+            </div>
+            <div class="p-3">
+              <h5 class="mb-1">Singapore Family Holiday</h5>
+              <div class="vd-package-meta mb-2">
+                <small><i class="bi bi-clock me-1 text-warning"></i>4 nights / 5 days</small>
+                <small><i class="bi bi-geo-alt me-1 text-warning"></i>Singapore</small>
+              </div>
+              <p class="mb-2 small">
+                Universal Studios, city tour, Sentosa island and convenient hotel near Indian dining options.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="vd-package-price">₹ 96,000*</div>
+                <button type="button" class="btn btn-sm vd-btn-outline" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                  View details
+                </button>
+              </div>
+              <small class="text-secondary d-block mt-1">*Indicative for 2 adults + 1 child. Flights optional.</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 vd-package-item" data-category="corporate">
+          <div class="vd-package-card vd-animate">
+            <div class="vd-package-image">
+              <img src="https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Dubai corporate offsite">
+            </div>
+            <div class="p-3">
+              <h5 class="mb-1">Dubai Corporate Offsite</h5>
+              <div class="vd-package-meta mb-2">
+                <small><i class="bi bi-clock me-1 text-warning"></i>3 nights / 4 days</small>
+                <small><i class="bi bi-geo-alt me-1 text-warning"></i>Dubai, UAE</small>
+              </div>
+              <p class="mb-2 small">
+                Hotel stay, meeting hall, desert safari and team-building experiences planned for business teams.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="vd-package-price">On request</div>
+                <button type="button" class="btn btn-sm vd-btn-outline" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                  Request quote
+                </button>
+              </div>
+              <small class="text-secondary d-block mt-1">Custom pricing based on group size and inclusions.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About company -->
+  <section id="about-company">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6 vd-animate">
+          <h2 class="vd-section-title">About Viswa Dream Travels</h2>
+          <p class="vd-section-muted text-start mb-3">
+            Viswa Dream Travels is a Chennai-based international travel agency helping individuals, couples and organisations discover global destinations with confidence.
+          </p>
+          <p class="mb-3">
+            The company is built on transparent advice, personalised itineraries and strong supplier partnerships to ensure a smooth travel journey from visa to touchdown back home.
+          </p>
+          <ul class="list-unstyled mb-3">
+            <li><i class="bi bi-check2-circle text-warning me-2"></i>Experienced team with hands-on knowledge of major holiday and business destinations.</li>
+            <li><i class="bi bi-check2-circle text-warning me-2"></i>Dedicated support for families, honeymooners, solo travellers and corporate groups.</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="vd-badge-soft"><i class="bi bi-briefcase-fill text-warning me-1"></i>Travel planning expertise</span>
+            <span class="vd-badge-soft"><i class="bi bi-emoji-smile-fill text-warning me-1"></i>Happy returning clients</span>
+          </div>
+        </div>
+        <div class="col-lg-3 vd-animate">
+          <h6 class="text-white mb-3">Our team</h6>
+          <div class="vd-contact-card">
+            <p class="small mb-2">Led by travel planners experienced in honeymoon, family and corporate itineraries.</p>
+            <ul class="list-unstyled small mb-0">
+              <li><i class="bi bi-person-check-fill text-warning me-1"></i>International tour consultants</li>
+              <li><i class="bi bi-person-hearts text-warning me-1"></i>Honeymoon & leisure specialists</li>
+              <li><i class="bi bi-person-badge-fill text-warning me-1"></i>Corporate travel coordinators</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 vd-animate">
+          <h6 class="text-white mb-3">Awards & badges</h6>
+          <div class="vd-contact-card">
+            <p class="small mb-1"><i class="bi bi-award-fill text-warning me-1"></i>Preferred partner for select international DMCs</p>
+            <p class="small mb-1"><i class="bi bi-shield-check text-warning me-1"></i>Trusted travel planner for repeat corporate clients</p>
+            <p class="small mb-0"><i class="bi bi-star-fill text-warning me-1"></i>Multiple 5-star client reviews for personalised support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact us -->
+  <section id="contact">
+    <div class="container">
+      <div class="text-center mb-4 vd-animate">
+        <h2 class="vd-section-title">Contact Us</h2>
+        <p class="vd-section-muted">
+          Share basic details about your trip, and the team will connect with you over phone, email or WhatsApp.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6 vd-animate">
+          <div class="vd-contact-card">
+            <h6 class="text-white mb-3">Send a quick enquiry</h6>
+            <form>
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" placeholder="Your name">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Mobile / WhatsApp</label>
+                  <input type="tel" class="form-control" placeholder="+91…">
+                </div>
+              </div>
+              <div class="row g-2 mt-0">
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" placeholder="you@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">City / location</label>
+                  <input type="text" class="form-control" placeholder="Chennai">
+                </div>
+              </div>
+              <div class="mt-2">
+                <label class="form-label">Trip type</label>
+                <select class="form-select">
+                  <option>International trip</option>
+                  <option>Honeymoon package</option>
+                  <option>Group / family trip</option>
+                  <option>Corporate trip</option>
+                  <option>Flight tickets</option>
+                  <option>Taxi / transfers</option>
+                  <option>Hotel / rooms</option>
+                </select>
+              </div>
+              <div class="mt-2">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="3" placeholder="Destination, dates, travellers, budget…"></textarea>
+              </div>
+              <div class="mt-3 d-flex flex-wrap gap-2">
+                <button type="button" class="vd-btn-primary-glow">Submit enquiry</button>
+                <a href="https://wa.me/919944368726" target="_blank" class="btn vd-btn-outline">
+                  <i class="bi bi-whatsapp me-1"></i>WhatsApp now
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 vd-animate">
+          <div class="vd-contact-card h-100">
+            <h6 class="text-white mb-3">Office & contact details</h6>
+            <ul class="list-unstyled small mb-3">
+              <li class="mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i><a href="tel:+919944368726" class="text-white">+91 99443 68726</a></li>
+              <li class="mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i><a href="mailto:info@viswadreamtravels.com" class="text-white">info@viswadreamtravels.com</a></li>
+              <li class="mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i>Chennai, Tamil Nadu, India</li>
+            </ul>
+            <p class="small mb-1"><i class="bi bi-clock-history text-warning me-1"></i>Working hours: 10:00 AM – 7:00 PM IST (Monday to Saturday)</p>
+            <p class="small mb-0"><i class="bi bi-whatsapp text-warning me-1"></i>Send your destination and dates on WhatsApp to receive quick package ideas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry modal -->
+  <div class="modal fade" id="vdEnquiryModal" tabindex="-1" aria-labelledby="vdEnquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color:#050505; border:1px solid rgba(255,255,255,0.15);">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="vdEnquiryModalLabel">Plan your trip with Viswa Dream Travels</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="vdEnquiryForm">
+            <div class="mb-3">
+              <label for="vdName" class="form-label">Full name</label>
+              <input type="text" class="form-control" id="vdName" required>
+            </div>
+            <div class="mb-3">
+              <label for="vdPhone" class="form-label">Mobile / WhatsApp number</label>
+              <input type="tel" class="form-control" id="vdPhone" required>
+            </div>
+            <div class="mb-3">
+              <label for="vdEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="vdEmail">
+            </div>
+            <div class="mb-3">
+              <label for="vdLocation" class="form-label">City / location</label>
+              <input type="text" class="form-control" id="vdLocation">
+            </div>
+            <div class="mb-3">
+              <label for="vdTripType" class="form-label">Trip type</label>
+              <select class="form-select" id="vdTripType">
+                <option selected>International trip</option>
+                <option>Honeymoon package</option>
+                <option>Group / family trip</option>
+                <option>Corporate trip</option>
+                <option>Flight tickets</option>
+                <option>Taxi / transfers</option>
+                <option>Hotel / rooms</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="vdMessage" class="form-label">Message / preferred dates</label>
+              <textarea class="form-control" id="vdMessage" rows="3"></textarea>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="vd-btn-primary-glow">Submit enquiry</button>
+              <a id="vdEnquiryWhatsAppLink" href="#" target="_blank" class="btn vd-btn-outline">
+                <i class="bi bi-whatsapp me-1"></i>Send details via WhatsApp
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-0 d-flex justify-content-between">
+          <small class="text-secondary">Phone/WhatsApp: +91 99443 68726 · Email: info@viswadreamtravels.com</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="text-white mb-3">Viswa Dream Travels</h5>
+          <p class="mb-2">
+            Chennai-based international travel agency offering holiday, honeymoon, group and corporate travel solutions.
+          </p>
+          <p class="mb-0"><span class="vd-badge-soft">Chennai · Tamil Nadu · India</span></p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-white mb-3">Services</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#services">International tour packages</a></li>
+            <li><a href="#services">Honeymoon packages</a></li>
+            <li><a href="#services">Flight ticket booking</a></li>
+            <li><a href="#services">Taxis & transfers</a></li>
+            <li><a href="#services">Hotel & rooms</a></li>
+            <li><a href="#services">Group & corporate trips</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-white mb-3">Contact</h6>
+          <ul class="list-unstyled mb-0">
+            <li><i class="bi bi-telephone-fill me-2 text-warning"></i><a href="tel:+919944368726">+91 99443 68726</a></li>
+            <li><i class="bi bi-envelope-fill me-2 text-warning"></i><a href="mailto:info@viswadreamtravels.com">info@viswadreamtravels.com</a></li>
+            <li><i class="bi bi-geo-alt-fill me-2 text-warning"></i>Chennai, Tamil Nadu, India</li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="text-white mb-3">Quick links</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="vd-footer-bottom mt-4 text-center">
+        <div>© <span id="vdYear"></span> Viswa Dream Travels. All rights reserved.</div>
+        <div>Chennai-based international travel agency · Honeymoon packages from Chennai · Flight ticket booking & corporate travel services.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile bottom nav -->
+  <nav class="vd-bottom-nav d-md-none">
+    <div class="container">
+      <ul class="nav nav-justified small py-1">
+        <li class="nav-item">
+          <a class="nav-link active" href="#hero">
+            <i class="bi bi-house-door-fill"></i>Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">
+            <i class="bi bi-grid-fill"></i>Services
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#packages">
+            <i class="bi bi-suitcase-fill"></i>Packages
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-company">
+            <i class="bi bi-info-circle-fill"></i>About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">
+            <i class="bi bi-envelope-fill"></i>Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Behaviour scripts -->
+  <script>
+    // Remove preloader after page load
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("vd-preloader");
+      if (preloader) {
+        preloader.style.opacity = "0";
+        setTimeout(() => preloader.remove(), 400);
+      }
+    });
+
+    // Current year
+    document.getElementById("vdYear").textContent = new Date().getFullYear();
+
+    // Enquiry form submit
+    const enquiryForm = document.getElementById("vdEnquiryForm");
+    const enquiryWhatsAppLink = document.getElementById("vdEnquiryWhatsAppLink");
+
+    enquiryForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Your enquiry details are captured. Connect backend/email service to process this form.");
+    });
+
+    // WhatsApp link from modal form
+    enquiryForm.addEventListener("input", function () {
+      const name = document.getElementById("vdName").value.trim();
+      const phone = document.getElementById("vdPhone").value.trim();
+      const email = document.getElementById("vdEmail").value.trim();
+      const location = document.getElementById("vdLocation").value.trim();
+      const tripType = document.getElementById("vdTripType").value;
+      const message = document.getElementById("vdMessage").value.trim();
+
+      const text = encodeURIComponent(
+        "New travel enquiry from website:%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Mobile/WhatsApp: " + phone + "%0A" +
+        "Email: " + email + "%0A" +
+        "City: " + location + "%0A" +
+        "Trip type: " + tripType + "%0A" +
+        "Message: " + message
+      );
+
+      enquiryWhatsAppLink.href = "https://wa.me/919944368726?text=" + text;
+    });
+
+    // Fade-in scroll animations
+    const animatedEls = document.querySelectorAll('.vd-animate');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vd-animate-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    animatedEls.forEach(el => io.observe(el));
+
+    // Package filter
+    const filterButtons = document.querySelectorAll('.vd-filter-pill');
+    const packageItems = document.querySelectorAll('.vd-package-item');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        packageItems.forEach(card => {
+          const categories = card.getAttribute('data-category').split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Highlight active bottom nav on scroll
+    const sections = ['hero', 'services', 'packages', 'about-company', 'contact'];
+    const bottomLinks = document.querySelectorAll('.vd-bottom-nav .nav-link');
+    window.addEventListener('scroll', () => {
+      let current = 'hero';
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) {
+          current = id;
+        }
+      });
+      bottomLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    });
+  </script>
+</body>
+</html>
