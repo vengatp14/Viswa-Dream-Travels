@@ -1,8 +1,8 @@
 
   /* Global theme colors: yellow, black, white */
     :root {
-      --vd-yellow: #ffc107;
-      --vd-yellow-soft: rgba(255, 193, 7, 0.2);
+      --vd-yellow: #075eff;
+      --vd-yellow-soft: rgba(7, 135, 255, 0.2);
       --vd-black: #000000ff;
       --vd-dark: #000000ff;
       --vd-white: #ffffff;
@@ -13,7 +13,7 @@
     /* LIGHT MODE (default) */
     body.light-mode {
       background-color: var(--vd-gray-light);
-      color: #333;
+      color: #ffffff;
     }
 
     body.light-mode .vd-navbar {
@@ -142,7 +142,7 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--vd-black);
+      background-color: white;
       color: var(--vd-white);
       scroll-behavior: smooth;
     }
@@ -155,7 +155,7 @@
     #vd-preloader {
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle at top, #222 0, #000 60%);
+      background: radial-gradient(circle at top, #797d8b 0, #000a2b 60%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -171,7 +171,7 @@
       border: 3px solid var(--vd-yellow-soft);
       border-top-color: var(--vd-yellow);
       animation: vd-spin 1s linear infinite;
-      box-shadow: 0 0 25px rgba(255, 193, 7, 0.7);
+      box-shadow: 0 0 25px rgba(7, 106, 255, 0.7);
       margin-bottom: 1rem;
     }
 
@@ -183,7 +183,7 @@
 
     /* Navbar */
     .vd-navbar {
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
     }
 
@@ -208,7 +208,7 @@
       position: relative;
       padding-top: 6rem;
       padding-bottom: 5rem;
-      background: radial-gradient(circle at top left, #333 0, #000 45%, #050505 100%);
+      background: radial-gradient(circle at top left, #b1bfff 0, #ffffff 45%, #eeeeee 100%);
       overflow: hidden;
     }
 
@@ -237,7 +237,7 @@
       border-radius: 999px;
       background: rgba(0, 0, 0, 0.7);
       border: 1px solid var(--vd-yellow-soft);
-      box-shadow: 0 0 15px rgba(255, 193, 7, 0.35);
+      box-shadow: 0 0 15px rgba(7, 73, 255, 0.35);
       font-size: 0.85rem;
     }
 
@@ -251,7 +251,7 @@
     }
 
     .vd-hero-subtitle {
-      color: #e1e1e1;
+      color: #000000;
     }
 
     .vd-hero-list li {
@@ -264,13 +264,13 @@
     }
 
     .vd-btn-primary-glow {
-      background: linear-gradient(135deg, #ffdd57, var(--vd-yellow));
+      background: linear-gradient(135deg, #57bcff, var(--vd-yellow));
       color: #111;
       border: none;
       padding: 0.75rem 1.8rem;
       font-weight: 600;
       border-radius: 999px;
-      box-shadow: 0 0 18px rgba(255, 193, 7, 0.8);
+      box-shadow: 0 0 18px rgba(7, 32, 255, 0.8);
       position: relative;
       overflow: hidden;
     }
@@ -347,18 +347,18 @@
       width: 60%;
       height: 2px;
       background: linear-gradient(90deg, var(--vd-yellow), transparent);
-      box-shadow: 0 0 15px rgba(255, 193, 7, 0.9);
+      box-shadow: 0 0 15px rgba(7, 65, 255, 0.9);
     }
 
     .vd-section-muted {
-      color: #cccccc;
+      color: #000000;
       max-width: 700px;
       margin-inline: auto;
     }
 
     /* Mission / Vision / Motto cards */
     .vd-card-ghost {
-      background: rgba(10, 10, 10, 0.9);
+      background: #221c79;
       border-radius: 1.2rem;
       padding: 1.5rem;
       border: 1px solid rgba(255, 255, 255, 0.05);
@@ -395,7 +395,7 @@
       border-radius: 999px;
       border: 1px solid var(--vd-yellow-soft);
       font-size: 0.8rem;
-      color: #f1f1f1;
+      color: #000000;
     }
 
     /* Services slider */
@@ -408,7 +408,7 @@
     .vd-service-pill {
       min-width: 300px;
       margin:0px 10px;
-      background: rgba(20, 20, 20, 0.95);
+      background: #221c79;
       border-radius: 999px;
       padding: 0.8rem 1.2rem;
       display: inline-flex;
@@ -431,7 +431,7 @@
     .vd-cta {
       position: relative;
       overflow: hidden;
-      background: radial-gradient(circle at left, var(--vd-yellow-soft), #000 45%);
+      background: radial-gradient(circle at left, var(--vd-yellow-soft), #bebebe 45%);
     }
 
     .vd-cta-wave {
@@ -450,28 +450,28 @@
 
     /* FAQ */
     .accordion-button {
-      background-color: #111111;
-      color: var(--vd-white);
+      background-color: #221c79;
+      color: white;
     }
 
     .accordion-button:not(.collapsed) {
-      color: var(--vd-yellow);
-      background-color: #181818;
-      box-shadow: 0 0 18px rgba(255, 193, 7, 0.5);
+      color: white;
+      background-color: #221c79;
+      box-shadow: 0 0 18px rgba(7, 85, 255, 0.5);
     }
 
     .accordion-body {
-      background-color: #0d0d0d;
-      color: #f1f1f1;
+      background-color: #221c79;
+      color: #ffffff;
     }
 
     /* Testimonials */
     .vd-testimonial-card {
-      background: rgba(15, 15, 15, 0.9);
+      background: #221c79;
       border-radius: 1.2rem;
       padding: 1.5rem;
       border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+      /* box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7); */
     }
 
     .vd-testimonial-img {
@@ -575,15 +575,15 @@
 
     /* Footer */
     footer {
-      background-color: #050505;
-      color: #cccccc;
+      background-color: #221c79;
+      color: #ffffff;
       padding-top: 3rem;
       padding-bottom: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     footer a {
-      color: #e1e1e1;
+      color: #ffffff;
       font-size: 0.93rem;
     }
 
@@ -596,7 +596,7 @@
       margin-top: 1.5rem;
       padding-top: 1rem;
       font-size: 0.8rem;
-      color: #888888;
+      color: #ffffff;
     }
 
     /* Helpers */
@@ -605,7 +605,7 @@
       background: rgba(255, 255, 255, 0.06);
       padding: 0.25rem 0.7rem;
       font-size: 0.75rem;
-      color: #f1f1f1;
+      color: #ffffff;
     }
 
     @media (max-width: 991.98px) {
@@ -621,19 +621,27 @@
       left: 0;
       right: 0;
       z-index: 998;
-      background: rgba(0, 0, 0, 0.96);
+      /* background: rgba(0, 0, 0, 0.96); */
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: none;
+
+      /* From https://css.glass */
+background: rgba(21, 4, 239, 0.45);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(12.5px);
+-webkit-backdrop-filter: blur(12.5px);
+border: 1px solid rgba(21, 4, 239, 1);
     }
 
     .vd-bottom-nav .nav-link {
       font-size: 0.7rem;
-      color: #e1e1e1;
+      color: #ffffff;
     }
 
     .vd-bottom-nav .nav-link.active,
     .vd-bottom-nav .nav-link:focus {
-      color: var(--vd-yellow);
+      color: #072b3d;
     }
 
     .vd-bottom-nav i {
@@ -668,7 +676,7 @@
 
     /* NEW: packages / tours section */
     .vd-package-card {
-      background: #101010;
+      background: #221c79;
       border-radius: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.08);
       overflow: hidden;
@@ -695,7 +703,7 @@
     .vd-package-meta small {
       display: inline-block;
       margin-right: 0.8rem;
-      color: #bbb;
+      color: #5f5f5f;
     }
 
     .vd-package-price {
@@ -711,7 +719,7 @@
       font-size: 0.8rem;
       cursor: pointer;
       background: transparent;
-      color: #e1e1e1;
+      color: #000000;
     }
 
     .vd-filter-pill.active {
@@ -722,7 +730,7 @@
 
     /* NEW: contact / about cards */
     .vd-contact-card {
-      background: #0b0b0b;
+      background: #221c79;
       border-radius: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 1.5rem;
@@ -744,9 +752,9 @@
 
 /* Golden Shine Hover */
 .vd-contact-card-modern:hover {
-    border: 1px solid rgba(255, 200, 90, 0.6);
-    box-shadow: 0 0 20px rgba(255, 195, 50, 0.35),
-                0 0 40px rgba(255, 195, 50, 0.2) inset;
+    border: 1px solid rgba(90, 120, 255, 0.6);
+    box-shadow: 0 0 20px rgba(50, 88, 255, 0.35),
+                0 0 40px rgba(50, 64, 255, 0.2) inset;
 }
 
 /* Title */
@@ -754,28 +762,28 @@
     color: #ffe9b0;
     font-weight: 600;
     letter-spacing: 0.5px;
-    text-shadow: 0 0 8px rgba(255, 215, 100, 0.4);
+    text-shadow: 0 0 8px rgba(100, 136, 255, 0.4);
 }
 
 /* Icons */
 .vd-contact-card-modern .vd-icon {
-    color: #f8d57e;
+    color: #7e8af8;
     font-size: 1rem;
-    text-shadow: 0 0 6px rgba(255, 200, 80, 0.5);
+    text-shadow: 0 0 6px rgba(80, 106, 255, 0.5);
 }
 
 /* Text & Links */
 .vd-contact-card-modern .vd-link,
 .vd-contact-card-modern .vd-text,
 .vd-contact-card-modern .vd-small {
-    color: #ffffff;
+    color: #000000;
     font-size: 1.2rem;
     transition: 0.3s ease;
 }
 
 .vd-contact-card-modern .vd-link:hover {
-    color: #ffd88a;
-    text-shadow: 0 0 10px rgba(255, 210, 90, 0.6);
+    color: #8a9fff;
+    text-shadow: 0 0 10px rgba(90, 93, 255, 0.6);
 }
 
 /* Soft spacing */
