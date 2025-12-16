@@ -13,8 +13,38 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <link rel="stylesheet" href="style.css">
- 
+  <link rel="stylesheet" href="assets/css/style.css">
+ <style>
+  @media (max-width: 576px) {
+    .vd-brand {
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--vd-yellow) !important;
+        text-transform: uppercase;
+        font-size: 12px !important;
+    }
+}
+.navbar-dark, .navbar[data-bs-theme=dark] {
+    --bs-navbar-color: rgba(255, 255, 255, 0.55);
+    --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+    --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: #fff;
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --bs-navbar-toggler-icon-bg: url("https://cdn-icons-png.flaticon.com/512/11932/11932864.png");
+}
+navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+ </style>
 </head>
 <body>
   <!-- Loading animation -->
@@ -28,10 +58,10 @@
 
   <!-- Sticky floating action buttons -->
   <div class="vd-floating-buttons">
-    <a href="https://wa.me/919944368726?text=Hi%20Viswa%20Dream%20Travels%2C%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" class="vd-floating-btn vd-floating-btn-whatsapp">
+    <a href="https://wa.me/919944429499?text=Hi%20Viswa%20Dream%20Travels%2C%20I%20would%20like%20to%20plan%20a%20trip." target="_blank" class="vd-floating-btn vd-floating-btn-whatsapp">
       <i class="bi bi-whatsapp fs-3"></i>
     </a>
-    <a href="tel:+919944368726" class="vd-floating-btn vd-floating-btn-call">
+    <a href="tel:+919944429499" class="vd-floating-btn vd-floating-btn-call">
       <i class="bi bi-telephone-fill fs-5"></i>
     </a>
     <button type="button" class="vd-floating-btn vd-floating-btn-enquiry" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
@@ -42,6 +72,8 @@
   <!-- Navbar WITH THEME TOGGLE -->
   <nav class="navbar navbar-expand-lg navbar-dark vd-navbar fixed-top">
     <div class="container">
+      <!-- Logo -->
+      <img src="assets/img/logo.png" alt="" height="70" class="d-inline-block align-text-middle">
       <a class="navbar-brand vd-brand" href="#hero" style="color: #221c79;">Viswa Dream Travels</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -55,7 +87,7 @@
           <li class="nav-item"><a class="nav-link vd-nav-link" href="#about-company">About</a></li>
           <li class="nav-item"><a class="nav-link vd-nav-link" href="#faq">FAQ</a></li>
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-sm vd-btn-primary-glow me-2 me-lg-3" href="tel:+919944368726">+91 99443 68726</a>
+            <a class="btn btn-sm vd-btn-primary-glow me-2 me-lg-3" href="tel:+919944429499">+91 99444 29499</a>
           </li>
         
         </ul>
@@ -64,19 +96,19 @@
   </nav>
 
   <!-- Hero -->
-  <header id="hero" class="vd-hero">
+  <header id="hero" class="vd-hero mt-5">
     <div class="vd-hero-bg-orbit"></div>
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
-          <div class="vd-hero-badge mb-3">
+          <!--<div class="vd-hero-badge mb-3">
             <span class="badge bg-primary text-dark me-1 border-0">New</span>
             <span>International trips & honeymoon packages from Chennai</span>
-          </div>
-          <h1 class="vd-hero-title  mb-3" style="color: #221c7975;">
-            Viswa Dream Travels – <span class="vd-highlight">Your Global Travel Partner from Chennai</span>
+          </div>-->
+          <h1 class="vd-hero-title text-primary mb-3">
+            Viswa Dream Travels
           </h1>
-          <p class="vd-hero-subtitle  mb-3">
+          <p class="vd-hero-subtitle mb-3">
             International trips, honeymoon packages, flight tickets, taxis, local guides, hotel rooms, group tours and corporate travel – all in one place.
           </p>
           <ul class="list-unstyled vd-hero-list mb-4">
@@ -88,10 +120,10 @@
             <button type="button" class="vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
               Plan Your Trip Now
             </button>
-            <a href="https://wa.me/919944368726" target="_blank" class="btn vd-btn-outline text-primary
+            <a href="https://wa.me/919944429499" target="_blank" class="btn vd-btn-outline text-primary
 text-primary
 text-primary">
-              Call / WhatsApp +91 99443 68726
+              Call / WhatsApp +91 99444 29499
             </a>
           </div>
         </div>
@@ -104,13 +136,13 @@ text-primary">
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="./1.jpg" alt="International city skyline">
+                <img src="assets/img/newz.png" alt="International city skyline">
               </div>
               <div class="carousel-item">
-                <img src="./2.jpg" alt="Honeymoon beach destination">
+                <img src="assets/img/venice.webp" alt="Honeymoon beach destination">
               </div>
               <div class="carousel-item">
-                <img src="./3.jpg" alt="Group trip adventure">
+                <img src="assets/img/japan.jpeg" alt="Group trip adventure">
               </div>
             </div>
           </div>
@@ -192,14 +224,19 @@ text-primary
 text-primary me-2"></i>Dedicated Chennai-based support team.</li>
           </ul>
         </div>
-        <div class="col-lg-6 vd-animate">
-          <div class="vd-gallery-img">
-            <img src="Untitled design (12).jpg" alt="Travellers with guide at airport">
+       <div class="col-lg-6 vd-animate">
+        <div class="vd-slider">
+          <div class="vd-slides">
+            <img src="assets/img/tajmahal.jpg" alt="">
+            <img src="assets/img/kashmir.png" alt="">
+            <img src="assets/img/shimla.cms" alt="">
+            <img src="assets/img/kerala.jpg" alt="">
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Services slider -->
   <section id="services">
@@ -392,7 +429,7 @@ text-primary me-2"></i>Dedicated Chennai-based support team.</li>
               <div class="col-md-4">
                 <div class="vd-testimonial-card h-100">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 1">
+                    <img src="assets/img/meera.png" class="vd-testimonial-img me-3" alt="User 1">
                     <div>
                       <h6 class="mb-0">Arun & Meera</h6>
                       <small class="text-white" class="text-secondary">Chennai · Bali honeymoon</small>
@@ -406,7 +443,7 @@ text-primary me-2"></i>Dedicated Chennai-based support team.</li>
               <div class="col-md-4">
                 <div class="vd-testimonial-card h-100">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 2">
+                    <img src="assets/img/priya.png" class="vd-testimonial-img me-3" alt="User 2">
                     <div>
                       <h6 class="mb-0">Priya S</h6>
                       <small class="text-white" class="text-secondary">Chennai · Europe group tour</small>
@@ -420,7 +457,7 @@ text-primary me-2"></i>Dedicated Chennai-based support team.</li>
               <div class="col-md-4">
                 <div class="vd-testimonial-card h-100">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 3">
+                    <img src="assets/img/raghav.png" class="vd-testimonial-img me-3" alt="User 3">
                     <div>
                       <h6 class="mb-0">Raghav Enterprises</h6>
                       <small class="text-white" class="text-secondary">Chennai · Corporate offsite</small>
@@ -438,7 +475,7 @@ text-primary me-2"></i>Dedicated Chennai-based support team.</li>
               <div class="col-md-4">
                 <div class="vd-testimonial-card h-100">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 4">
+                    <img src="assets/img/lakshmi.png" class="vd-testimonial-img me-3" alt="User 4">
                     <div>
                       <h6 class="mb-0">Lakshmi & Karthik</h6>
                       <small class="text-white" class="text-secondary">Chennai · Maldives honeymoon</small>
@@ -452,7 +489,7 @@ text-primary me-2"></i>Dedicated Chennai-based support team.</li>
               <div class="col-md-4">
                 <div class="vd-testimonial-card h-100">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="https://images.pexels.com/photos/936229/pexels-photo-936229.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 5">
+                    <img src="assets/img/vijay.png" class="vd-testimonial-img me-3" alt="User 5">
                     <div>
                       <h6 class="mb-0">Vijay Kumar</h6>
                       <small class="text-white" class="text-secondary">Chennai · Singapore family trip</small>
@@ -466,7 +503,7 @@ text-primary me-2"></i>Dedicated Chennai-based support team.</li>
               <div class="col-md-4">
                 <div class="vd-testimonial-card h-100">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400" class="vd-testimonial-img me-3" alt="User 6">
+                    <img src="assets/img/tech.png" class="vd-testimonial-img me-3" alt="User 6">
                     <div>
                       <h6 class="mb-0">TechNova Pvt Ltd</h6>
                       <small class="text-white" class="text-secondary">Chennai · Team incentive trip</small>
@@ -495,160 +532,486 @@ text-primary me-2"></i>Dedicated Chennai-based support team.</li>
       </div>
       <div class="row g-3">
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="City view at night">
+          <div class="vd-gallery-img" data-title="Dubai">
+            <img src="assets/img/dubai.webp" alt="City view at night">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Beach resort">
+          <div class="vd-gallery-img" data-title="Sri Lanka">
+            <img src="assets/img/srilanka.webp" alt="Beach resort">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/1430677/pexels-photo-1430677.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mountain landscape">
+          <div class="vd-gallery-img" data-title="London">
+            <img src="assets/img/london.jpg" alt="Mountain landscape">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/225502/pexels-photo-225502.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Couple on beach">
+          <div class="vd-gallery-img" data-title="Bali">
+            <img src="assets/img/bali.png" alt="Couple on beach">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/1188473/pexels-photo-1188473.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="City street">
+          <div class="vd-gallery-img" data-title="Malaysia">
+            <img src="assets/img/malaysia.webp" alt="City street">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/821651/pexels-photo-821651.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Friends on trip">
+          <div class="vd-gallery-img" data-title="Singapore">
+            <img src="assets/img/singapore.jpeg" alt="Friends on trip">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Airplane view">
+          <div class="vd-gallery-img" data-title="France">
+            <img src="assets/img/eiffel.webp" alt="Airplane view">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="vd-gallery-img">
-            <img src="https://images.pexels.com/photos/1519088/pexels-photo-1519088.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Corporate team travel">
+          <div class="vd-gallery-img" data-title="Maldives">
+            <img src="assets/img/maldives.jpeg" alt="Corporate team travel">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Travel packages / tours -->
-  <section id="packages">
-    <div class="container">
-      <div class="text-center mb-4 vd-animate">
-        <h2 class="vd-section-title text-primary">Travel Packages & Tours</h2>
-        <p class="vd-section-muted">
-          Featured international trips and honeymoon tours with clear pricing, duration and highlights for easy comparison.
-        </p>
+<!-- Travel Packages / Tours -->
+<section id="packages">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-4 vd-animate">
+      <h2 class="vd-section-title text-primary">Travel Packages & Tours</h2>
+      <p class="vd-section-muted">
+        Featured international trips and honeymoon tours with clear pricing, duration and highlights for easy comparison.
+      </p>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="row justify-content-between align-items-center mb-3 vd-animate">
+      <div class="col-md-8 mb-2">
+        <div class="d-flex flex-wrap gap-2">
+          <button class="vd-filter-pill active" data-filter="all">All</button>
+          <button class="vd-filter-pill" data-filter="honeymoon">Honeymoon</button>
+          <button class="vd-filter-pill" data-filter="family">Family / Group</button>
+          <!--<button class="vd-filter-pill" data-filter="corporate">Corporate</button>-->
+          <button class="vd-filter-pill" data-filter="budget">Budget</button>
+        </div>
       </div>
-      <div class="row justify-content-between align-items-center mb-3 vd-animate">
-        <div class="col-md-8 mb-2">
-          <div class="d-flex flex-wrap gap-2">
-            <button class="vd-filter-pill active" data-filter="all">All</button>
-            <button class="vd-filter-pill" data-filter="honeymoon">Honeymoon</button>
-            <button class="vd-filter-pill" data-filter="family">Family / Group</button>
-            <button class="vd-filter-pill" data-filter="corporate">Corporate</button>
-            <button class="vd-filter-pill" data-filter="budget">Budget</button>
-          </div>
-        </div>
-        <div class="col-md-4 mb-2 text-md-end">
-          <small class="text-white" class="text-secondary">Filter by budget, location, date, category.</small>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4 vd-package-item" data-category="honeymoon budget">
-          <div class="vd-package-card vd-animate">
-            <div class="vd-package-image">
-              <img src="./7.jpg" alt="Malaysia honeymoon package">
-            </div>
-            <div class="p-3">
-              <h5 class="mb-1">Romantic Malaysia Honeymoon</h5>
-              <div class="vd-package-meta mb-2">
-                <small class="text-white"><i class="bi bi-clock me-1 text-primary
-text-primary
-text-primary"></i>5 nights / 6 days</small>
-                <small class="text-white"><i class="bi bi-geo-alt me-1 text-primary
-text-primary
-text-primary"></i>Kuala Lumpur, Malaysia</small>
-              </div>
-              <p class="mb-2 small">
-                City exploration, Petronas Towers, local cuisine, luxury resort stay and airport transfers from KL airport.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="vd-package-price">₹ 72,000*</div>
-                <button type="button" class="btn btn-sm vd-btn-outline" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
-                  View details
-                </button>
-              </div>
-              <small class="text-white" class="text-secondary d-block mt-1">*Indicative per couple, ex-Chennai. Final price may vary.</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 vd-package-item" data-category="family">
-          <div class="vd-package-card vd-animate">
-            <div class="vd-package-image">
-              <img src="./6.jpg" alt="Singapore family holiday">
-            </div>
-            <div class="p-3">
-              <h5 class="mb-1">Singapore Family Holiday</h5>
-              <div class="vd-package-meta mb-2">
-                <small class="text-white"><i class="bi bi-clock me-1 text-primary
-text-primary
-text-primary"></i>4 nights / 5 days</small>
-                <small class="text-white"><i class="bi bi-geo-alt me-1 text-primary
-text-primary
-text-primary"></i>Singapore</small>
-              </div>
-              <p class="mb-2 small">
-                Universal Studios, Marina Bay Sands, Sentosa island and convenient hotel near Indian dining options.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="vd-package-price">₹ 92,000*</div>
-                <button type="button" class="btn btn-sm vd-btn-outline" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
-                  View details
-                </button>
-              </div>
-              <small class="text-white" class="text-secondary d-block mt-1">*Indicative for 2 adults + 1 child. Flights optional.</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 vd-package-item" data-category="corporate">
-          <div class="vd-package-card vd-animate">
-            <div class="vd-package-image">
-              <img src="./5.jpg" alt="India cultural tour">
-            </div>
-            <div class="p-3">
-              <h5 class="mb-1">India Cultural Tour</h5>
-              <div class="vd-package-meta mb-2">
-                <small class="text-white"><i class="bi bi-clock me-1 text-primary
-text-primary
-text-primary"></i>4 nights / 5 days</small>
-                <small class="text-white"><i class="bi bi-geo-alt me-1 text-primary
-text-primary
-text-primary"></i>Delhi, Agra & Jaipur, India</small>
-              </div>
-              <p class="mb-2 small">
-                Taj Mahal tours, historical sites, local heritage experiences and comfortable hotel stays for group travelers.
-              </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="vd-package-price">₹ 45,000*</div>
-                <button type="button" class="btn btn-sm vd-btn-outline" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
-                  View details
-                </button>
-              </div>
-              <small class="text-white" class="text-secondary d-block mt-1">*Indicative per person, ex-Chennai. Final price may vary.</small>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-4 mb-2 text-md-end">
+        <small class="text-secondary">Filter by category type.</small>
       </div>
     </div>
-  </section>
+
+   <section class="py-5 vd-card-section">
+    <div class="container">
+      <div class="row g-4" id="packagesAccordion">
+
+      <!-- Card 1 – Malaysia & Singapore -->
+      <div class="col-md-4 vd-package-item" data-category="family">
+        <div class="vd-package-card vd-animate h-100">
+          <div class="vd-package-image">
+            <img src="assets/img/7.jpg" alt="Malaysia & Singapore itinerary" class="img-fluid">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1">Malaysia & Singapore</h5>
+            <div class="vd-package-meta mb-2">
+              <small class="text-white"><i class="bi bi-clock me-1 text-white"></i>5 Nights / 6 Days</small>
+              <small class="text-white"><i class="bi bi-geo-alt me-1 text-white"></i>Malaysia & Singapore</small>
+            </div>
+            <p class="mb-2 small">Singapore City tour, Universal Studio, SEA Aquarium, Wings of Time, Batu Caves, Genting Highlands, KL City tour, Putrajaya tour.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="vd-package-price">₹ 90,000*</div>
+              <button type="button" class="btn btn-sm vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                enquiry
+              </button>
+            </div>
+            <small class="text-secondary d-block mt-1">*Adult price. 3N Malaysia – 2N Singapore.</small>
+            <button class="btn btn-sm btn-outline-secondary toggle-accordion" data-bs-toggle="collapse" data-bs-target="#pkgDetailsMalaysia">
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div>
+          <!-- Accordion Details -->
+           <div class="collapse mt-3" id="pkgDetailsMalaysia">
+            <div class="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button">🌏 5 Nights / 6 Days – Malaysia & Singapore</button>
+                </h2>
+                <div class="accordion-body small">
+                  <strong>Day 1:</strong> Arrival in Kuala Lumpur, Petronas Towers & city tour.<br>
+                  <strong>Day 2:</strong> Batu Caves & Genting Highlands.<br>
+                  <strong>Day 3:</strong> Putrajaya city tour or Sunway Lagoon (optional).<br>
+                  <strong>Day 4:</strong> Transfer to Singapore, Marina Bay Sands, Merlion Park.<br>
+                  <strong>Day 5:</strong> Singapore City tour, Sentosa Island, shopping.<br>
+                  <strong>Day 6:</strong> Breakfast & airport drop.<br><br>
+                  <div class="text-end mt-3">
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#pkgDetailsMalaysia">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 – Indonesia Bali -->
+      <div class="col-md-4 vd-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100">
+          <div class="vd-package-image">
+            <img src="assets/img/bali2.jpg" alt="Indonesia Bali" class="img-fluid">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1">Indonesia – Bali</h5>
+            <div class="vd-package-meta mb-2">
+              <small class="text-white"><i class="bi bi-clock me-1 text-white"></i>5 Days</small>
+              <small class="text-white"><i class="bi bi-geo-alt me-1 text-white"></i>Bali, Indonesia</small>
+            </div>
+            <p class="mb-2 small">Uluwatu Temple, Kintamani Volcano, Bedugul, Bali city tour, Tanah Lot temple.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="vd-package-price">₹ 64,990*</div>
+              <button type="button" class="btn btn-sm vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                enquiry
+              </button>
+            </div>
+            <small class="text-secondary d-block mt-1">*Adult price. Flights optional.</small>
+            <button class="btn btn-sm btn-outline-secondary toggle-accordion" data-bs-toggle="collapse" data-bs-target="#pkgDetailsBali">
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div>
+
+          <!-- Accordion Details -->
+          <div class="collapse mt-3" id="pkgDetailsBali">
+            <div class="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button">🌴 5 Days – Indonesia Bali</button>
+                </h2>
+                <div class="accordion-body small">
+                  <strong>Day 1:</strong> Arrival at Ngurah Rai Airport Bali, meet & greet, hotel check-in, lunch & dinner at Indian restaurant.<br><br>
+                  <strong>Day 2:</strong> Ubud Palace & Market, Kintamani Village, Agro Tourism, Tegalalang Rice Terrace.<br><br>
+                  <strong>Day 3:</strong> Taman Ayun Palace, Sangeh Monkey Forest, Ulun Danu Temple, Tanah Lot Temple.<br><br>
+                  <strong>Day 4:</strong> Tanjung Benoa Watersport, Uluwatu Temple, Kecak Dance Melasti.<br><br>
+                  <strong>Day 5:</strong> Check out, shopping, packed Indian dinner.
+                  <div class="text-end mt-3">
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#pkgDetailsBali">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 – Maldives -->
+      <div class="col-md-4 vd-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100">
+          <div class="vd-package-image">
+            <img src="assets/img/maldives2.png" alt="Maldives" class="img-fluid">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1">Maldives</h5>
+            <div class="vd-package-meta mb-2">
+              <small class="text-white"><i class="bi bi-clock me-1 text-white"></i>4 Days</small>
+              <small class="text-white"><i class="bi bi-geo-alt me-1 text-white"></i>Maldives</small>
+            </div>
+            <p class="mb-2 small">Daily Water Villa / Beach Bungalow stays, relaxation & water activities.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="vd-package-price">₹ 59,990*</div>
+              <button type="button" class="btn btn-sm vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                enquiry
+              </button>
+            </div>
+            <small class="text-secondary d-block mt-1">*Adult price. Flights included.</small>
+            <button class="btn btn-sm btn-outline-secondary toggle-accordion" data-bs-toggle="collapse" data-bs-target="#pkgDetailsMaldives">
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div>
+
+          <!-- Accordion Details -->
+          <div class="collapse mt-3" id="pkgDetailsMaldives">
+            <div class="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button">🏝️ 4 Days – Maldives</button>
+                </h2>
+                <div class="accordion-body small">
+                  <strong>Day 1:</strong> Departure from Kochi to Male, hotel check-in, dinner at hotel.<br><br>
+                  <strong>Day 2:</strong> Breakfast, free time, water sports, lunch & dinner at hotel.<br><br>
+                  <strong>Day 3:</strong> Breakfast, beach relaxation, lunch & dinner at hotel.<br><br>
+                  <strong>Day 4:</strong> Breakfast, check out, transfer to airport, fly back to Kochi.
+                  <div class="text-end mt-3">
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#pkgDetailsMaldives">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 – Dubai / Abu Dhabi -->
+      <div class="col-md-4 vd-package-item" data-category="family">
+        <div class="vd-package-card vd-animate h-100">
+          <div class="vd-package-image">
+            <img src="assets/img/dubab.webp" alt="Dubai / Abu Dhabi" class="img-fluid">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1">Dubai / Abu Dhabi</h5>
+            <div class="vd-package-meta mb-2">
+              <small class="text-white"><i class="bi bi-clock me-1 text-white"></i>5 Days</small>
+              <small class="text-white"><i class="bi bi-geo-alt me-1 text-white"></i>UAE</small>
+            </div>
+            <p class="mb-2 small">Dubai city tour, Burj Khalifa, Desert safari, Abu Dhabi tour, cruise with dinner.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="vd-package-price">₹ 87,000*</div>
+              <button type="button" class="btn btn-sm vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                enquiry
+              </button>
+            </div>
+            <small class="text-secondary d-block mt-1">*Adult price. Flights included.</small>
+            <button class="btn btn-sm btn-outline-secondary toggle-accordion" data-bs-toggle="collapse" data-bs-target="#pkgDetailsDubai">
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div>
+
+          <!-- Accordion Details -->
+          <div class="collapse mt-3" id="pkgDetailsDubai"  >
+            <div class="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button">🏙️ 5 Days – Dubai / Abu Dhabi</button>
+                </h2>
+                <div class="accordion-body small">
+                  <strong>Day 1:</strong> Dubai arrival, hotel check-in, Marina Dhow Cruise with dinner.<br><br>
+                  <strong>Day 2:</strong> Half-day Dubai city tour, Desert safari with BBQ & Belly dance.<br><br>
+                  <strong>Day 3:</strong> Free & easy, Dubai Mall visit, Burj Khalifa 124th floor.<br><br>
+                  <strong>Day 4:</strong> Abu Dhabi city tour: Sheikh Zayed Grand Mosque, Heritage Village, Emirates Palace.<br><br>
+                  <strong>Day 5:</strong> Check out, Dubai shopping, airport drop.
+                  <div class="text-end mt-3">
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#pkgDetailsDubai">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 – Sri Lanka -->
+      <div class="col-md-4 vd-package-item" data-category="budget">
+        <div class="vd-package-card vd-animate h-100">
+          <div class="vd-package-image">
+            <img src="assets/img/srilanka.webp" alt="Sri Lanka" class="img-fluid">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1">Sri Lanka</h5>
+            <div class="vd-package-meta mb-2">
+              <small class="text-white"><i class="bi bi-clock me-1 text-white"></i>5 Days</small>
+              <small class="text-white"><i class="bi bi-geo-alt me-1 text-white"></i>Sri Lanka</small>
+            </div>
+            <p class="mb-2 small">Kandy, Pinnawala, Nuwara Eliya, Kathirgamam Murugan Temple, Colombo city tour.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="vd-package-price">₹ 48,000*</div>
+              <button type="button" class="btn btn-sm vd-btn-primary-glow" data-bs-toggle="modal" data-bs-target="#vdEnquiryModal">
+                enquiry
+              </button>
+            </div>
+            <small class="text-secondary d-block mt-1">*Adult price. Flights included.</small>
+            <button class="btn btn-sm btn-outline-secondary toggle-accordion" data-bs-toggle="collapse" data-bs-target="#pkgDetailsSriLanka">
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div>
+
+          <!-- Accordion Details -->
+          <div class="collapse mt-3" id="pkgDetailsSriLanka" >
+            <div class="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button">🇱🇰 5 Days – Sri Lanka</button>
+                </h2>
+                <div class="accordion-body small">
+                  <strong>Day 1:</strong> Arrival from Chennai, visit Pinnawala Elephant Sanctuary, Kandy city tour.<br><br>
+                  <strong>Day 2:</strong> Botanical garden in Kandy, Nuwara Eliya tour, tea factory, Ramboda Falls.<br><br>
+                  <strong>Day 3:</strong> Kathirgamam Murugan Temple, Ravana Falls & mountain, evening tour.<br><br>
+                  <strong>Day 4:</strong> Colombo city sightseeing, beaches enroute.<br><br>
+                  <strong>Day 5:</strong> Check out & depart to Chennai.
+                  <div class="text-end mt-3">
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#pkgDetailsSriLanka">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Travel India Package -->
+<section id="india-packages">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-4 vd-animate">
+      <h2 class="vd-section-title text-primary">Travel Around India</h2>
+      <p class="vd-section-muted">
+        Featured travel destinations with clear pricing, duration, and highlights for easy comparison.
+      </p>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="row justify-content-between align-items-center mb-3 vd-animate">
+      <div class="col-md-8 mb-2">
+        <div class="d-flex flex-wrap gap-2">
+          <button class="vd-india-filter-pill active" data-filter="all">All</button>
+          <button class="vd-india-filter-pill" data-filter="honeymoon">Honeymoon</button>
+          <button class="vd-india-filter-pill" data-filter="north">North India</button>
+          <button class="vd-india-filter-pill" data-filter="south">South India</button>
+          <button class="vd-india-filter-pill" data-filter="east">East India</button>
+          <button class="vd-india-filter-pill" data-filter="west">West India</button>
+          <button class="vd-india-filter-pill" data-filter="northeast">North East</button>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2 text-md-end">
+        <small class="text-secondary">Filter by category type.</small>
+      </div>
+    </div>
+
+    <!-- Packages Cards -->
+    <div class="row g-4" id="indiaPackagesGrid">
+      <!-- North India -->
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Agra</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Delhi</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Jaipur</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Jammu and Kashmir</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Ladakh</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Manali</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Shimla</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="north">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Uttarakhand</h5></div>
+      </div>
+
+      <!-- South India -->
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Bangalore</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Hyderabad</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Karnataka</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Kerala</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Kochi</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Mysore</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Ooty</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="south">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Tamil Nadu</h5></div>
+      </div>
+
+      <!-- North East -->
+       <div class="col-md-4 vd-india-package-item" data-category="northeast">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Arunachal Pradesh</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="northeast">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Gangtok</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="northeast">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Pelling</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="northeast">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Sikkim</h5></div>
+      </div>
+
+      <!-- East India -->
+       <div class="col-md-4 vd-india-package-item" data-category="east">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Bihar</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="east">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Darjeeling</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="east">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Kolkata</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="east">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>West Bengal</h5></div>
+      </div>
+
+      <!-- West India -->
+       <div class="col-md-4 vd-india-package-item" data-category="west">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Ahmedabad</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="west">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Goa</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="west">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Maharashtra</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="west">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Mumbai</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="west">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Pune</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="west">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Rajasthan</h5></div>
+      </div>
+
+      <!-- Honeymoon -->
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Andaman</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Coorg</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Darjeeling</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Goa</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Himachal</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Kashmir</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Kerala</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Kodaikanal</h5></div>
+      </div>
+       <div class="col-md-4 vd-india-package-item" data-category="honeymoon">
+        <div class="vd-package-card vd-animate h-100 p-3"><h5>Manali</h5></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- About company -->
   <section id="about-company">
@@ -660,7 +1023,7 @@ text-primary"></i>Delhi, Agra & Jaipur, India</small>
             Viswa Dream Travels is a Chennai-based international travel agency helping individuals, couples and organisations discover global destinations with confidence.
           </p>
           <p class="mb-3 text-dark">
-            The company is built on transparent advice, personalised itineraries and strong supplier partnerships to ensure a smooth travel journey from visa to touchdown back home.
+            The company is built on transparent advice, personalised itineraries and strong supplier partneyrships to ensure a smooth travel journey from visa to touchdown back home.
           </p>
           <ul class="list-unstyled mb-3 text-dark">
             <li><i class="bi bi-check2-circle text-primary
@@ -766,7 +1129,7 @@ text-primary me-1"></i>Multiple 5-star client reviews for personalised support</
               </div>
               <div class="mt-3 d-flex flex-wrap gap-2">
                 <button type="button" class="vd-btn-primary-glow">Submit enquiry</button>
-                <a href="https://wa.me/919944368726" target="_blank" class="btn vd-btn-outline">
+                <a href="https://wa.me/919944429499" target="_blank" class="btn vd-floating-btn-whatsapp">
                   <i class="bi bi-whatsapp me-1"></i>WhatsApp now
                 </a>
               </div>
@@ -780,7 +1143,7 @@ text-primary me-1"></i>Multiple 5-star client reviews for personalised support</
     <ul class="list-unstyled vd-list mb-3">
         <li class="mb-2 d-flex align-items-center">
             <i class="bi bi-telephone-fill vd-icon me-2"></i>
-            <a href="tel:+919944368726" class="vd-link">+91 99443 68726</a>
+            <a href="tel:+919944429499" class="vd-link">+91 99444 29499</a>
         </li>
 
         <li class="mb-2 d-flex align-items-center">
@@ -822,23 +1185,23 @@ text-primary me-1"></i>Multiple 5-star client reviews for personalised support</
           <form id="vdEnquiryForm">
             <div class="mb-3">
               <label for="vdName" class="form-label">Full name</label>
-              <input type="text" class="form-control" id="vdName" required>
+              <input type="text" id="vdName"  class="form-control" required>
             </div>
             <div class="mb-3">
               <label for="vdPhone" class="form-label">Mobile / WhatsApp number</label>
-              <input type="tel" class="form-control" id="vdPhone" required>
+              <input type="tel" id="vdPhone" class="form-control" required>
             </div>
             <div class="mb-3">
               <label for="vdEmail" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="vdEmail">
+              <input type="email" id="vdEmail" class="form-control" required>
             </div>
             <div class="mb-3">
               <label for="vdLocation" class="form-label">City / location</label>
-              <input type="text" class="form-control" id="vdLocation">
+              <input type="text" class="form-control" id="vdLocation" required>
             </div>
             <div class="mb-3">
               <label for="vdTripType" class="form-label">Trip type</label>
-              <select class="form-select" id="vdTripType">
+              <select class="form-select" id="vdTripType" required>
                 <option selected>International trip</option>
                 <option>Honeymoon package</option>
                 <option>Group / family trip</option>
@@ -854,14 +1217,14 @@ text-primary me-1"></i>Multiple 5-star client reviews for personalised support</
             </div>
             <div class="d-grid gap-2">
               <button type="submit" class="vd-btn-primary-glow">Submit enquiry</button>
-              <a id="vdEnquiryWhatsAppLink" href="#" target="_blank" class="btn vd-btn-outline">
+              <a id="vdEnquiryWhatsAppLink" href="https://wa.me/919944429499" target="_blank" class="btn vd-btn-outline">
                 <i class="bi bi-whatsapp me-1"></i>Send details via WhatsApp
               </a>
             </div>
           </form>
         </div>
         <div class="modal-footer border-0 d-flex justify-content-between">
-          <small class="text-white" class="text-secondary">Phone/WhatsApp: +91 99443 68726 · Email: info@viswadreamtravels.com</small>
+          <small class="text-white" class="text-secondary">Phone/WhatsApp: +91 99444 29499 · Email: info@viswadreamtravels.com</small>
         </div>
       </div>
     </div>
@@ -886,7 +1249,7 @@ text-primary me-1"></i>Multiple 5-star client reviews for personalised support</
             <li><a href="#services">Flight ticket booking</a></li>
             <li><a href="#services">Taxis & transfers</a></li>
             <li><a href="#services">Hotel & rooms</a></li>
-            <li><a href="#services">Group & corporate trips</a></li>
+            <!--<li><a href="#services">Group & corporate trips</a></li>-->
           </ul>
         </div>
         <div class="col-md-3">
@@ -894,7 +1257,7 @@ text-primary me-1"></i>Multiple 5-star client reviews for personalised support</
           <ul class="list-unstyled mb-0">
             <li><i class="bi bi-telephone-fill me-2 text-primary
 text-primary
-text-primary"></i><a href="tel:+919944368726">+91 99443 68726</a></li>
+text-primary"></i><a href="tel:+919944429499">+91 99444 29499</a></li>
             <li><i class="bi bi-envelope-fill me-2 text-primary
 text-primary
 text-primary"></i><a href="mailto:info@viswadreamtravels.com">info@viswadreamtravels.com</a></li>
@@ -957,7 +1320,8 @@ text-primary"></i>Chennai, Tamil Nadu, India</li>
 
   <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="app.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/add.js"></script>
 
 </body>
 </html>
