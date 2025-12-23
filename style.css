@@ -9,6 +9,9 @@
       --vd-gray-light: #f8f9fa;
       --vd-gray-dark: #212529;
     }
+    .text-blue {
+      color: #075eff !important;
+    }
 
     /* LIGHT MODE (default) */
     body.light-mode {
