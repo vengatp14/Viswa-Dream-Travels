@@ -1,7 +1,7 @@
 
   /* Global theme colors: yellow, black, white */
     :root {
-      --vd-yellow: #075eff;
+      --vd-yellow: #005A9C;
       --vd-yellow-soft: rgba(7, 135, 255, 0.2);
       --vd-black: #000000ff;
       --vd-dark: #000000ff;
@@ -9,6 +9,19 @@
       --vd-gray-light: #f8f9fa;
       --vd-gray-dark: #212529;
     }
+
+    /* All heading tags color only */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+i,
+li {
+  color: #005A9C;
+}
 
     /* LIGHT MODE (default) */
     body.light-mode {
